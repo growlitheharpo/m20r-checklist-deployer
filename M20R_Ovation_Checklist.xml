@@ -1,0 +1,188 @@
+<SimBase.Document Type="Checklist" version="1,0">
+    <Checklist.Checklist>
+        <IncludeCheckpointLibrary FileName="CheckpointsLibrary\\Asobo_DefaultCheckpointLibrary.xml"/>
+
+        <Step ChecklistStepId="PREFLIGHT_GATE">
+
+            <Page SubjectTT="TT:GAME.CHECKLIST_PREFLIGHT_INSPECTION_COCKPIT_1">
+                <Checkpoint ReferenceId="Gear_Selector_Check_Down"/>
+                <Checkpoint ReferenceId="Magnetos_Off"/>
+                <Checkpoint ReferenceId="Engine_Master_Check_Off"/>
+                <Checkpoint ReferenceId="Battery_Switch_On"/>
+                <Checkpoint ReferenceId="Circuit_Breakers_All_Pushed"/>
+                <Checkpoint ReferenceId="PITOT_HEAT_ON_CHECK_WORKING"/>
+                <Checkpoint ReferenceId="Fuel_Quantity_Indicator_Check"/>
+                <Checkpoint ReferenceId="ALL_ELECTRICAL_EQUIPMENT_OFF"/>
+            </Page>
+
+            <Page SubjectTT="TT:GAME.CHECKLIST_BEFORE_STARTING_ENGINE">
+                <Checkpoint ReferenceId="ALL_ELECTRICAL_EQUIPMENT_OFF"/>
+                <Checkpoint ReferenceId="Circuit_Breakers_All_Pushed"/>
+                <Checkpoint ReferenceId="POWER_LEVER_IDLE"/>
+                <Checkpoint ReferenceId="PROP_RPM_LEVER_MAX"/>
+                <Checkpoint ReferenceId="Mixture_Lean"/>
+                <Checkpoint ReferenceId="Parking_Brake_Set"/>
+                <Checkpoint ReferenceId="Flaps_0"/>
+                <Checkpoint ReferenceId="FUEL_SELECTOR_FULLEST_TANK"/>
+                <Checkpoint ReferenceId="Gear_Selector_Check_Down"/>
+                <Checkpoint ReferenceId="Passenger_Briefing_Complete"/>
+            </Page>
+
+            <Page SubjectTT="TT:GAME.CHECKLIST_STARTING_ENGINE">
+                <Checkpoint ReferenceId="Throttle_Full"/>
+                <Checkpoint ReferenceId="PROP_RPM_LEVER_MAX"/>
+                <Checkpoint ReferenceId="Mixture_Rich"/>
+                <Checkpoint ReferenceId="Battery_Switch_On"/>
+                <Checkpoint ReferenceId="Alternator_On"/>
+                <Checkpoint ReferenceId="Annunciator_Panel_Test"/>
+                <Checkpoint ReferenceId="AUX_FUEL_PUMPS_ON"/>
+                <Checkpoint ReferenceId="POWER_LEVER_IDLE"/>
+                <Checkpoint ReferenceId="Propeller_Area_Clear"/>
+                <Checkpoint ReferenceId="CHECKLIST_MAGNETO_START_POS_RELEASE_TO_BOTH"/>
+                <Checkpoint ReferenceId="Engine_Idle_Check_600-700_RPM"/>
+                <Checkpoint ReferenceId="Oil_Pressure_Check"/>
+                <Checkpoint ReferenceId="AUX_FUEL_PUMPS_OFF"/>
+            </Page>
+
+            <Page SubjectTT="TT:GAME.CHECKLIST_AFTER_STARTING_ENGINE_1">
+                <Checkpoint ReferenceId="Radio_Master_Switch_On"/>
+                <Checkpoint ReferenceId="AP_TRIMS_ON"/>
+                <Checkpoint ReferenceId="Flight_Instruments_Set"/>
+            </Page>
+
+        </Step>
+        <Step ChecklistStepId="PREFLIGHT_TAXI_OUT">
+
+            <Page SubjectTT="TT:GAME.CHECKLIST_TAXI">
+                <Checkpoint ReferenceId="Parking_Brake_Release"/>
+                <Checkpoint ReferenceId="Brakes_Test"/>
+            </Page>
+
+        </Step>
+        <Step ChecklistStepId="FLIGHT_RUNWAY">
+
+            <Page SubjectTT="TT:GAME.CHECKLIST_BEFORE_TAKE_OFF">
+                <Checkpoint ReferenceId="Parking_Brake_Set"/>
+                <Checkpoint ReferenceId="FUEL_SELECTOR_FULLEST_TANK"/>
+                <Checkpoint ReferenceId="Throttle_Adjust_1000_RPM"/>
+                <Checkpoint ReferenceId="PROP_RPM_LEVER_MAX"/>
+                <Checkpoint ReferenceId="Mixture_Rich"/>
+                <Checkpoint ReferenceId="Alternator_On"/>
+                <Checkpoint ReferenceId="Throttle_Set_2000_RPM"/>
+                <Checkpoint ReferenceId="Magneto_150_RPM_Max_Decrease"/>
+                <Checkpoint ReferenceId="Magneto_50_RPM_Difference_Max"/>
+                <Checkpoint ReferenceId="Magneto_Both"/>
+                <Checkpoint ReferenceId="Throttle_Adjust_1000_RPM"/>
+                <Checkpoint ReferenceId="AUX_FUEL_PUMPS_ON"/>
+                <Checkpoint ReferenceId="AUX_FUEL_PUMPS_OFF"/>
+                <Checkpoint ReferenceId="TRIMS_SET_FOR_TAKEOFF"/>
+                <Checkpoint ReferenceId="FLAPS_TAKEOFF"/>
+                <Checkpoint ReferenceId="Flight_Control_Free_And_Correct"/>
+                <Checkpoint ReferenceId="Strobe_Light_On"/>
+                <Checkpoint ReferenceId="Parking_Brake_Release"/>
+            </Page>
+
+        </Step>
+        <Step ChecklistStepId="FLIGHT_TAKEOFF">
+
+            <Page SubjectTT="TT:GAME.CHECKLIST_NORMAL_TAKE_OFF">
+                <Checkpoint ReferenceId="Throttle_Full"/>
+                <Checkpoint ReferenceId="CAUTION_PANEL_CHECK"/>
+                <Checkpoint ReferenceId="LANDING_GEAR_APPLY_BRAKE_UP_CHECK_UNSAFE_LIGHT_OFF"/>
+                <Checkpoint ReferenceId="Flaps_0"/>
+            </Page>
+
+            <Page SubjectTT="TT:GAME.CHECKLIST_ENROUTE_CLIMB">
+                <Checkpoint ReferenceId="Throttle_2500_RPM"/>
+            </Page>
+
+        </Step>
+
+        <Step ChecklistStepId="FLIGHT_CRUISE">
+
+            <Page SubjectTT="TT:GAME.CHECKLIST_CRUISE">
+                <Checkpoint ReferenceId="Throttle_Adjust_DESIRED_RPM"/>
+                <Checkpoint ReferenceId="Elevator_Trim_Set"/>
+            </Page>
+
+        </Step>
+
+        <Step ChecklistStepId="FLIGHT_DESCENT">
+
+            <Page SubjectTT="TT:GAME.CHECKLIST_DESCENT">
+                <Checkpoint ReferenceId="Flaps_0"/>
+                <Checkpoint ReferenceId="LANDING_GEAR_UP"/>
+                <Checkpoint ReferenceId="POWER_LEVER_AS_REQUIRED"/>
+                <Checkpoint ReferenceId="AIRSPEEDS_AS_REQUIRED"/>
+            </Page>
+
+        </Step>
+
+        <Step ChecklistStepId="LANDING_APPROACH">
+
+            <Page SubjectTT="TT:GAME.CHECKLIST_BEFORE_LANDING">
+                <Checkpoint ReferenceId="Landing_Gear_Down"/>
+                <Checkpoint ReferenceId="LANDING_GEAR_LIGHTS_CHECK_DOWN_TEST"/>
+                <Checkpoint ReferenceId="PROP_RPM_LEVER_MAX"/>
+                <Checkpoint ReferenceId="Mixture_Rich"/>
+                <Checkpoint ReferenceId="FLAPS_AS_REQUIRED"/>
+                <Checkpoint ReferenceId="Airspeed_Between">
+                    <Feedback name="TT:FEEDBACK.REQUIRED_SPEED"/>
+                    <SetTemplateValue Id="Min Airspeed" Value="70"/>
+                    <SetTemplateValue Id="Max Airspeed" Value="85"/>
+                    <SetTemplateValue Id="Airspeed indicated">
+                        <Val SimVarName="AIRSPEED INDICATED" Units="knots"/>
+                    </SetTemplateValue>
+                </Checkpoint>
+            </Page>
+
+        </Step>
+        <Step ChecklistStepId="LANDING_TOUCHDOWN">
+
+            <Page SubjectTT="TT:GAME.CHECKLIST_LANDING">
+                <Checkpoint ReferenceId="Touchdown_Airspeed_Slowest_As_Possible"/>
+                <Checkpoint ReferenceId="Touchdown_Main_First"/>
+                <Checkpoint ReferenceId="Landing_Roll_Lower_Nose_Gently"/>
+                <Checkpoint ReferenceId="Braking_Minimum_Required"/>
+            </Page>
+
+        </Step>
+
+        <Step ChecklistStepId="LANDING_GROUNDROLL">
+
+            <Page SubjectTT="TT:GAME.CHECKLIST_AFTER_LANDING">
+                <Checkpoint ReferenceId="POWER_LEVER_AS_REQUIRED"/>
+                <Checkpoint ReferenceId="Flaps_0"/>
+                <Checkpoint ReferenceId="TRIMS_SET_FOR_TAKEOFF"/>
+                <Checkpoint ReferenceId="Landing_Light_Off"/>
+                <Checkpoint ReferenceId="Taxi_Light_As_required"/>
+            </Page>
+
+        </Step>
+
+        <Step ChecklistStepId="LANDING_TAXI_IN">
+        </Step>
+
+        <Step ChecklistStepId="LANDING_GATE">
+
+            <Page SubjectTT="TT:GAME.CHECKLIST_PARKING">
+                <Checkpoint ReferenceId="Parking_Brake_Set"/>
+                <Checkpoint ReferenceId="POWER_LEVER_IDLE"/>
+                <Checkpoint ReferenceId="Radios_Off"/>
+                <Checkpoint ReferenceId="PITOT_STATIC_HEATERS_OFF"/>
+                <Checkpoint ReferenceId="Mixture_Lean"/>
+                <Checkpoint ReferenceId="Alternator_Off"/>
+                <Checkpoint ReferenceId="Battery_Switch_Off"/>
+                <Checkpoint ReferenceId="Magnetos_Off"/>
+            </Page>
+
+            <Page SubjectTT="TT:GAME.CHECKLIST_SECURING">
+                <Checkpoint ReferenceId="Magnetos_Off"/>
+                <Checkpoint ReferenceId="Battery_Switch_Off"/>
+                <Checkpoint ReferenceId="Radios_Off"/>
+                <Checkpoint ReferenceId="ALL_ELECTRICAL_EQUIPMENT_OFF"/>
+            </Page>
+
+        </Step>
+    </Checklist.Checklist>
+</SimBase.Document>
