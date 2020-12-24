@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text.Json;
 
 namespace M20R_Checklist_Deployer
 {
@@ -12,6 +10,16 @@ namespace M20R_Checklist_Deployer
 
 		static void Main(string[] args)
 		{
+			DeployChecklist();
+
+			Console.WriteLine();
+			Console.WriteLine("Press any key to continue...");
+			Console.ReadKey(true);
+		}
+
+		private static void DeployChecklist()
+		{
+			Console.WriteLine("Preparing to deploy...");
 			var packagesLocation = SimDetection.FindSimPackagesFolder();
 			if (string.IsNullOrEmpty(packagesLocation))
 			{
@@ -19,13 +27,24 @@ namespace M20R_Checklist_Deployer
 				return;
 			}
 
+			Console.WriteLine($"MSFS Packages location found: {packagesLocation}");
+
 			var ovationLocation = FindFolderForPackage(packagesLocation, "carenado-aircraft-m20r-ovation");
+			if (string.IsNullOrEmpty(ovationLocation))
+			{
+				Console.WriteLine("Failed to find the Carenado M20R Ovation in your packages folder.");
+				Console.WriteLine("Please ensure you have purchased and installed it.");
+				return;
+			}
+
+			Console.WriteLine($"M20R Package Located: {Path.GetRelativePath(packagesLocation, ovationLocation)}");
+
 			if (!WriteChecklistFile(ovationLocation))
 			{
 				Console.WriteLine("Failed to update the checklist file.");
 			}
 
-			Console.WriteLine("Updated checklist file successfully!");
+			Console.WriteLine("Deployed checklist file successfully!");
 		}
 
 		private static bool IsSubdirectory(string a, string b)
@@ -80,7 +99,7 @@ namespace M20R_Checklist_Deployer
 			var outFilePath = Path.Combine(packageRoot, "SimObjects", "Airplanes", "Carenado_M20R_Ovation");
 			if (!Directory.Exists(outFilePath))
 			{
-				Console.WriteLine("Failed to find Carenado_M20R_Ovation within the package folder.");
+				Console.WriteLine("Failed to find Carenado_M20R_Ovation SimObject within the package folder.");
 				return false;
 			}
 
