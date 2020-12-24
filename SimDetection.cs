@@ -51,9 +51,8 @@ namespace M20R_Checklist_Deployer
 				}
 			}
 
-			// Skip fallback steam detections
-
 			// TODO: User prompt on failure?
+			// TODO: configuration file to skip this?
 
 			return null;
 		}

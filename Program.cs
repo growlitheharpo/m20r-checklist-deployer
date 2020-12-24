@@ -10,11 +10,35 @@ namespace M20R_Checklist_Deployer
 
 		static void Main(string[] args)
 		{
-			DeployChecklist();
+			if (WriteWarningUserAccepts())
+				DeployChecklist();
 
 			Console.WriteLine();
 			Console.WriteLine("Press any key to continue...");
 			Console.ReadKey(true);
+		}
+
+		private static bool WriteWarningUserAccepts()
+		{
+			Console.WriteLine("+========================================================================+");
+			Console.WriteLine("|               In-Game Checklist for Carenado M20R Ovation              |");
+			Console.WriteLine("|                        github.com/growlitheharpo                       |");
+			Console.WriteLine("|                                                                        |");
+			Console.WriteLine("| This program adds a very rudimentary checklist for the Carenado M20R.  |");
+			Console.WriteLine("| You must purchase this aircraft separately (through the in-game        |");
+			Console.WriteLine("| marketplace) for this to work. The checklist is currently very basic   |");
+			Console.WriteLine("| and attempts to mimic the PDF checklist provided by Carenado by just   |");
+			Console.WriteLine("| re-using steps from the framework created by Asobo for the stock       |");
+			Console.WriteLine("| aircraft. Camera hints are not yet implemented and it is unlikely to   |");
+			Console.WriteLine("| work with the AI co-pilot.                                             |");
+			Console.WriteLine("|                                                                        |");
+			Console.WriteLine("+========================================================================+");
+			Console.WriteLine();
+			Console.Write("Enter (Y/y) to continue, or any other key to exit without installing: ");
+
+			var input = Console.ReadLine();
+			Console.WriteLine();
+			return input.ToLower() == "y";
 		}
 
 		private static void DeployChecklist()
@@ -71,7 +95,7 @@ namespace M20R_Checklist_Deployer
 			if (e.Length == 0)
 				return null;
 
-			// Prefer community, then official
+			// Prefer community if one were to exist (since it will overlay), then official
 			var communityVer = e.FirstOrDefault(p => IsSubdirectory(Path.Combine(root, "Community"), p));
 			if (communityVer != default)
 				return communityVer;
@@ -80,7 +104,6 @@ namespace M20R_Checklist_Deployer
 			if (officialVer != default)
 				return officialVer;
 
-			// Dunno what to do here, one of those should've worked...
 			return null;
 		}
 
